@@ -2,7 +2,7 @@
 
 var template = require('ejs!./templates/tagsTpl.ejs'),
 	AutocompleteView = require('./AutocompleteView'),
-	TagsCollection = require('./../../models/bloggingTagsCollection'),
+	TagsCollection = require('./../../models/BloggingTagsCollection'),
 	TagsCollectionView = require('./TagsCollectionView');
 
 var TagsView = Mn.LayoutView.extend({
