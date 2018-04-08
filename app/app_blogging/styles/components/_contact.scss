@@ -1,0 +1,51 @@
+.contact-form {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: $white;
+    margin-bottom: 15px;
+    border: 1px solid $input;
+
+    .logo-img {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .signin-block {
+        text-align: center;
+    }
+
+    .signin-button,
+    .signup-button {
+        margin: 10px;
+    }
+
+    .divider {
+        height: 30px;
+        background-color: $light-grey;
+    }
+
+    .contact-us-form {
+        h3 {
+            color: $main;
+            margin: 20px 0;
+        }
+        p {
+            color: $text-hover;
+            margin: 10px 0;
+        }
+        p.error {
+            color: $red;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input,
+        textarea {
+            margin: 15px 0;
+        }
+        .send-contact-info {
+            margin-bottom: 30px;
+        }
+    }
+}

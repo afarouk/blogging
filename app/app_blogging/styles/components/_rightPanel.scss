@@ -1,0 +1,23 @@
+.rightPanel {
+
+    .user-summary-region {
+        padding: 0 20px;
+        border: 1px solid $grey;
+
+        .user_summary_container {
+
+            .user_summary_title {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .summary_list {
+                font-size: $size-small;
+
+                div {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

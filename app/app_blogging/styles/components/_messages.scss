@@ -1,0 +1,99 @@
+.blogging_question_messages {
+	display: none;
+	margin-top: 10px;
+
+	.reply_comment_field {
+		display: none;
+		margin-top: 10px;	}
+
+	.root_comment_field,
+	.reply_comment_field {
+
+		textarea {
+			width: 80%;
+			height: 30px;
+			padding: 4px;
+		}
+
+		a {
+			display: inline-block;
+			vertical-align: top;
+			border-radius: 2px;
+			padding: 4px 6px;
+			color: $white;
+			background-color: $main;
+			text-decoration: none;
+		}
+
+		.counter {
+			color: $grey;
+
+			div {
+				display: inline-block;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 461px) {
+		.root_comment_field {
+			textarea {
+				width: 70%;
+			}
+		}
+	}
+
+	.messages_region {
+		margin: 10px 0;
+
+		.messages_list {
+
+			.message_body {
+				margin-top: 10px;
+
+				img {
+					height: 40px;
+					display: inline-block;
+				}
+
+				.user_name {
+					display: inline-block;
+					color: $main;
+				}
+
+				.message_text {
+					padding-top: 10px;
+					font-size: 12px;
+				}
+
+				.time_ago {
+					color: $main;
+					font-size: 12px;
+				}
+			}
+
+			.options_bar {
+				border-top: 1px solid $grey;
+				border-bottom: 1px solid $grey;
+
+				div {
+					display: inline-block;
+					padding: 5px;
+
+					img {
+						height: 18px;
+					}
+				}
+
+				.reply,
+				.like_comment,
+				.trash {
+					cursor: pointer;
+				}
+
+				.trash {
+					float: right;
+				}
+			}
+		}
+	}
+}

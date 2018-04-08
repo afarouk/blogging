@@ -1,0 +1,15 @@
+.share-question {
+    .share-block {
+        text-align: center;
+        
+        .share-button {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+
+            img {
+                height: 60px;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Sharing the question</h4>
+        </div>
+        <div class="modal-body">
+            <h4><%= displayText %></h4>
+            <p>SHARE WITH:</p><% shareUrl %>
+            <div class="share-block">
+                <div class="share-button facebook-button">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<%= window.encodeURIComponent(shareUrl) %>" target="_blank"><img src="images/fb.png" alt="" /></a>
+                </div>
+                <div class="share-button twitter-button">
+                    <a href="https://twitter.com/intent/tweet?text=<%= window.encodeURIComponent(shareUrl) %>" target="_blank"><img src="images/twitter.png" alt="" /></a>
+                </div>
+                <div class="share-button email-button">
+                    <a href=""><img src="images/email_button.png" alt="" /></a>
+                </div>
+                <div class="share-button sms-button">
+                    <a href=""><img src="images/sms_button.png" alt="" /></a>
+                </div>
+            </div>
+        </div>
+      <div class="modal-footer">
+          <a href="#" class="btn btn-default close_button">Cancel</a>
+      </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

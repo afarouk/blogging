@@ -1,0 +1,9 @@
+<div class="blogging_question_categories_title">CATEGORIES</div>
+<div class="blogging_question_categories_close">X</div>
+<div class="blogging_question_categories_block">
+<% _(categories).each(function(category) { %>
+  <div class="blogging_question_categories_item">
+   <%= category.displayText %>
+  </div>
+<% }) %>
+</div>

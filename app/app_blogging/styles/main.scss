@@ -1,0 +1,49 @@
+@import 'base/colors';
+@import 'base/helpers';
+@import 'base/typography';
+@import 'components/loader';
+@import 'components/questions';
+@import 'components/questionDetailed';
+@import 'components/filters';
+@import 'components/tagsFilter';
+@import 'components/createQuestion';
+@import 'components/signIn';
+@import 'components/signUp';
+@import 'components/shareQuestion';
+@import 'components/userInfo';
+@import 'components/contact';
+@import 'components/centralRegion';
+@import 'components/autocomplete';
+@import 'components/messages';
+@import 'components/typesFilter';
+@import 'components/rightPanel';
+
+/* AF: This is not working. So moving to 'head' tag.
+@font-face {
+  font-family: 'Promt', sans-serif;
+  src: url('https://fonts.google.com/specimen/Prompt?selection.family=Prompt');
+  font-weight: 400;
+  font-style: normal;
+}
+*/
+html,body {
+	width: 100%;
+	height: 100%;
+	background-color: $light-grey!important;
+	margin: 0;
+	padding: 0;
+
+	.app-container {
+		height: 100%;
+	}
+
+    .error {
+        display: none;
+        color: $red;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}

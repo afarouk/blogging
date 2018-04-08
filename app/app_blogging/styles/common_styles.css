@@ -1,0 +1,14 @@
+/* AF: moved to head 
+  @import url('https://fonts.google.com/specimen/Prompt?selection.family=Prompt:400italic,600italic,400,600');
+*/
+.common_brand {
+    padding: 0!important;
+}
+
+.common_brand img {
+    height: 50px;
+}
+
+.common_navigation {
+    font-family: 'Promt', sans-serif;
+}

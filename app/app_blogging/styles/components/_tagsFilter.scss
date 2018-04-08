@@ -1,0 +1,99 @@
+.tags-container {
+    border: 1px solid $input;
+    margin-bottom: 10px;
+
+    .blogging_tagsHeader {
+        height: 40px;
+        background-color: $main;
+        border: 1px solid $main;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .panelHeaderTitle {
+            display: inline-block;
+            color: $white;
+      /*      font: 400 12px / 40px Ubuntu; */
+           font-style: normal;
+           font-weight:400;
+           font-size: 12px;
+           line-height: 40px;
+           font-family: 'Open Sans';
+        }
+
+        .blogging_tags_close {
+            float: right;
+            padding: 8px;
+            margin-top: 10px;
+            color: $white;
+        }
+    }
+
+    .js-input-region,
+    .js-tags-region,
+    .go-buttons-container {
+        margin: 15px;
+    }
+
+    .js-tags-region {
+        .tag-item {
+            display: inline-block;
+            background-color: $main;
+            border-radius: 3px;
+            margin-right: 3px;
+            margin-bottom: 3px;
+
+            span {
+                background-color: $main;
+
+                i {
+                    visibility: hidden;
+                    padding: 5px;
+                }
+            }
+
+            &:hover {
+                span {
+                    i {
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+        &.categories {
+            .tag-item {
+                border: 1px solid $main;
+                border-radius: 3px;
+                background-color: $white;
+                span {
+                    color: $main;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    .go-buttons-container {
+        button {
+            float: right;
+            margin-left: 10px;
+        }
+
+        .go-button {
+            background-color: $main;
+            border-color: $main;
+        }
+
+        .discard-button {
+            background-color: $white;
+            border-color: $main;
+            color: $main;
+
+            &:hover {
+                background-color: $main;
+                color: $white;
+            }
+        }
+    }
+}

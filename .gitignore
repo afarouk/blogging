@@ -1,0 +1,10 @@
+node_modules/*
+app/build/*
+app/app_chalkboards/build/*
+app/app_sitelette/build/*
+app/app_blogging/build/*
+dist/*
+dist.zip
+.project
+
+*.log

@@ -1,0 +1,12 @@
+<div class="blogging_question_tags_title">TAGS</div>
+<div class="blogging_question_tags_close">X</div>
+<div class="blogging_question_tags_icon_wrapper">
+  <div class="blogging_question_tags_icon"></div>
+</div>
+<div class="blogging_question_tags_block">
+  <% _(tags).each(function(tag) { %>
+    <div class="blogging_question_tags_item">
+    <%= tag.displayText %>
+    </div>
+  <% }) %>
+</div>

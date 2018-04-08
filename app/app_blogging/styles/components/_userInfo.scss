@@ -1,0 +1,12 @@
+.user-info {
+    background-color: $white;
+    border: 1px solid $input;
+    padding-left: 20px;
+    margin-bottom: 15px;
+
+    p   {
+        color: $grey;
+        overflow: hidden;
+        margin: 10px;
+    }
+}

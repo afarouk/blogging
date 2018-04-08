@@ -1,0 +1,268 @@
+<!--CREATE QUESTION-->
+<div class="blogging_question_edit create-question-container collapse">
+    <header>
+        <div class="modal-header">
+            <button type="button" class="close blogging_question_edit_close" data-dismiss="modal" aria-label="Close">&times;</button>
+            <div class="modal_header_title">
+                <% if(fulfill) {%>
+                    Please select the correct answer
+                <% } else { %>
+                    Create a new question
+                <% } %>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="modal-body">
+            <ul class="required_field blogging_question_edit_type">Question type:
+                <li class="blogging_question_edit_type_item">
+                    <input name="blogging_question_edit_type_item" type="radio" cmtyx-question-type="2" <% if (model.subType===2 ) { %>checked
+                    <% } %>><span> Fact</span>
+                </li>
+                <li class="blogging_question_edit_type_item">
+                    <input name="blogging_question_edit_type_item"  type="radio" cmtyx-question-type="1" <% if (model.subType===1 ) { %>checked
+                    <% } %>><span> Opinion</span>
+                </li>
+                <li class="blogging_question_edit_type_item">
+                    <input name="blogging_question_edit_type_item"  type="radio" cmtyx-question-type="3" <% if (model.subType===3 ) { %>checked
+                    <% } %>><span> Prediction</span>
+                </li>
+            </ul>
+            <p class="type_error error">Please, select question type</p>
+            <!-- <ul class="blogging_question_is_anonymous">Is anonymous:
+                <li class="blogging_question_is_anonymous_item">
+                    <input type="checkbox" <% if (model.isAnonymous) { %>checked
+                    <% } %>><span>&nbsp</span>
+                </li>
+            </ul> -->
+            <div class="panel panel-default prediction-details">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a class="collapsed panelTitle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Prediction Details</a>
+                        <a class="collapsed panelTitle collapseBtn" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Hints
+                            <img class="prediction-arrow" src="images/arrow_down_grey.png" alt="">
+                        </a>
+                    </h4>
+                </div>
+                <div class="prediction_help" id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <p>How do you create a good prediction question:</p>
+                    <ol>
+                        <li>Be specific: The event needs to be a “yes or no” outcome. The prediction must be objective and verifiable. Predictions that are vague or “sort of” will create confusion and not make a good prediction question.
+                            <br />Example of a bad prediction: Is it going to rain?
+                            <br />Example of a good prediction: Is it going to rain more than a tenth of an inch in San Francisco on or before Oct 3rd 2016 at midnight?
+                        </li>
+                        <li>People will be able to make a prediction up to the time the event starts.</li>
+                        <li>Set the time the event ends and the outcome is known. This is done by setting the number of days from the start. This can be fractions of a day.
+                            <br />For example, if you think the event will end six hours after it starts, then enter .25.
+                        </li>
+                        <li>As soon as the event is over (based on your input), you will receive an email requesting that you post the correct outcome of your prediction. This email will contain a link that will take you to the blogging App so that you can select the actual outcome. You can not select an outcome before the outcome date.</li>
+                        <li>Once you have selected the correct outcome, people who made a correct prediction will receive receive 200 bonus points.</li>
+                    </ol>
+                </div>
+                <div>
+                    <div class="panel-body">
+
+                        <div class="row event_start_date">
+                            <div class="col-xs-12">
+                                <span class="required_field expiration-date">Date Event Starts:</span>
+                            </div>
+                            <div class="col-xs-12 event_date">
+                                <div class="date_item">
+                                    <div class="date_item_text">Day:</div>
+                                    <input name="day" type='text' class="form-control datetimepicker day" id="expirationDay" />
+                                </div>
+                                <div class="date_item">
+                                    <div class="date_item_text">Month:</div>
+                                    <input name="month" type='text' class="form-control datetimepicker month" id="expirationMonth" />
+                                </div>
+                                <div class="date_item">
+                                    <div class="date_item_text">Year:</div>
+                                    <input name="year" type='text' class="form-control datetimepicker year" id="expirationYear" />
+                                </div>
+                                <div class="date_item">
+                                    <div class="date_item_text">Time:</div>
+                                    <input name="time" type='text' class="form-control datetimepicker time" id="expirationTime" />
+                                </div>
+                                <div class="date_item">
+                                    <div class="date_item_text">am/pm:</div>
+                                    <!-- <input type='text' class="form-control datetimepicker ampm" id="expirationAMPM" value="<%= expirationAMPM %>" /> -->
+                                    <div class="dropdown">
+                                        <input class="dropdown-toggle form-control ampm" id="expirationAMPM" data-toggle="dropdown" aria-expanded="false" readonly="readonly" />
+                                        <ul class="dropdown-menu">
+                                            <li class="ampm_selector"><a href="#">am</a></li>
+                                            <li class="ampm_selector"><a href="#">pm</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row fullfillment-date">
+                            <div class="col-xs-12">
+                                <span class="required_field expiration-date">Date Event Ends:</span>
+                            </div>
+                            <div class="col-xs-12 event_date">
+                                <div class="date_item">
+                                    <div class="date_item_text">Day:</div>
+                                    <input name="day" type='text' class="form-control datetimepicker day" id="fulfillmentDay" />
+                                </div>
+                                <div class="date_item">
+                                    <div class="date_item_text">Month:</div>
+                                    <input name="month" type='text' class="form-control datetimepicker month" id="fulfillmentMonth" />
+                                </div>
+                                <div class="date_item">
+                                    <div class="date_item_text">Year:</div>
+                                    <input name="year" type='text' class="form-control datetimepicker year" id="fulfillmentYear" />
+                                </div>
+                                <div class="date_item">
+                                    <div class="date_item_text">Time:</div>
+                                    <input name="time" type='text' class="form-control datetimepicker time" id="fulfillmentTime" />
+                                </div>
+                                <div class="date_item">
+                                    <div class="date_item_text">am/pm:</div>
+                                    <!-- <input type='text' class="form-control datetimepicker ampm" id="fulfillmentAMPM" /> -->
+                                    <div class="dropdown">
+                                        <input class="dropdown-toggle form-control ampm" id="fulfillmentAMPM" data-toggle="dropdown" aria-expanded="false" readonly="readonly" />
+                                        <ul class="dropdown-menu">
+                                            <li class="ampm_selector"><a href="#">am</a></li>
+                                            <li class="ampm_selector"><a href="#">pm</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <span class="notified_text">You will be notified via email to verify the correct Answer when event ends</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blogging_question_edit_text">
+                <textarea id="textarea" class="form-control question-text" maxlength="256" placeholder="Add your question here"><%= model.displayText %></textarea>
+            </div>
+            <p class="question_error error">Please, enter your question above</p>
+
+            <div>
+                <span class="required_field answersWordSpan">Answers:</span>
+                <ul class="blogging_question_edit_answers">
+                    <% _.each(model.choices, function(choice, index){ %>
+                        <li>
+                            <div class="blogging_question_edit_answers_item">
+                                <input  type="radio" name="answer" data-index="<%= index %>" class="radioCreateAnswer answer-choice" <% if (choice.isCorrect) { %>checked
+                                <% } %>>
+                                    <div class="inputRadioImg"></div>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <%= index + 1 %>
+                                        </div>
+                                        <input  type="text" data-index="<%= index %>" class="form-control answer-example"   placeholder="*Answer <%= index + 1 %>" value="<%= choice.displayText %>">
+                                    </div>
+                            </div>
+                        </li>
+                        <% }) %>
+                </ul>
+                <p class="choices_text_error error">Please, fill answers fields</p>
+                <p class="choices_iscorrect_error error">Please, select which answer is correct</p>
+                <div class="blogging_question_add_select_answers">
+                    <span class="selectAnswerText">Select the correct answer</span>
+                    <a href="" class="addAnswerBtn">
+                        <img src="images/add2.png" alt="" class="miniPlusBtn">
+                        <span>Add an answer</span>
+                    </a>
+                    <a href="" class="removeAnswerBtn">
+                        <span>- Remove an answer </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="blogging_question_info">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed panelTitle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Answer info</a>
+                            <a class="collapsed panelTitle collapseBtn" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <img class="answer-arrow" src="images/arrow_down_grey.png" alt="">
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <div class="answerInfoBlock">
+                                <textarea id="textarea" class="form-control answer-info-text" maxlength="500" placeholder="Add additional info here"><%= model.additionalInformation %></textarea>
+                                <div class="additional-links-container">
+                                    <div class="first-link"></div>
+                                    <div class="second-link"></div>
+                                </div>
+                            </div>
+                            <div class="counter">
+                                <div class="message_length">0</div>
+                                <div>/500</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="createQuestionInputs">
+                <div class="row">
+                    <div class="form-group blogging_question_edit_atribution_link">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
+                            <label for="atributionLinkInput" class="blogging_question_edit_atribution_link_label">Links</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 p-l-0">
+                            <div class="">
+                                <input type="text" class="form-control" id="atributionLinkInput" placeholder="Hit Enter to save url">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group blogging_question_edit_categories">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
+                            <label for="categoriesInput" class="required_field blogging_question_edit_categories_label">Topics</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 p-l-0">
+                            <div id="new-question-categories-region"></div>
+                            <p class="categories_error error">Please select at least one Topic</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group blogging_question_edit_tags">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
+                            <label for="tagsInput" class="blogging_question_edit_tags_label">Tags</label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 p-l-0">
+                            <div id="new-question-tags-region"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group blogging_question_add_picture">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
+                        <label for="atributionLinkInput" class="blogging_question_add_picture_label">Add picture</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 p-l-0">
+                        <div class="blogging_question_upload_image">
+                            <div class="dropzone" data-ghost="false" data-canvas="true" data-originalsize="false" data-width="320" data-height="568" data-resize="false" data-save=false style="width: 100%;">
+                                <input type="file" name="thumb" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="modal-footer">
+            <div class="blogging_question_edit_buttons">
+                <span class="blogging_question_edit_post post-btn">Post</span>
+                <span class="blogging_question_edit_discard discard-btn">Cancel</span>
+            </div>
+        </div>
+    </footer>
+</div>

@@ -1,0 +1,169 @@
+<div class="blogging_question">
+    <ul class="questionHeader">
+        <li class="blogging_question_user">
+            <div class="blogging_question_user_avatar">
+                <% if (authorImageURL && authorImageURL.length !== 0) { %>
+                    <img src="<%= authorImageURL %>" alt="" />
+                <% } else { %>
+                    <img src="images/question_user.png" alt="">
+                <% } %>
+            </div>
+            <div class="blogging_question_user_username"><%= authorUserName %></div>
+        </li>
+        <li class="blogging_question_title">
+            <div class="blogging_question_title_name">
+                <p><%= pollType.displayText.toUpperCase() %></p>
+            </div>
+            <div class="blogging_question_title_date">
+                <p><%= timeAgo %></p>
+            </div>
+        </li>
+        <li class="dropdown blogging_tags_dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Tags <span><%= tags.length %></span>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <% if (tags.length !== 0) { %>
+                    <% _(tags).each(function(tag) { %>
+                        <li class="blogging_question_tags_item">
+                            <div>
+                                <a href="">#<%= tag.displayText %></a>
+                            </div>
+                        </li>
+                    <% }) %>
+                <% } else { %>
+                    <li>no tags</li>
+                <% } %>
+            </ul>
+        </li>
+        <li class="dropdown blogging_categories_dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics <span><%= categories.length %></span></a>
+            <ul class="dropdown-menu pull-right">
+                <% _(categories).each(function(category) { %>
+                  <li class="blogging_question_categories_item">
+                      <div>
+                          <a href=""><%= category.displayText %></a>
+                      </div>
+                   </li>
+                <% }) %>
+            </ul>
+        </li>
+    </ul>
+    <section class="questionBody">
+        <% if (img_url) { %>
+            <div class="blogging_question_img">
+                <img src="<%= img_url %>" alt="" />
+            </div>
+        <% } %>
+        <div class="blogging_question_text"><%= displayText %></div>
+        <% if (pollType.enumText === 'PREDICTION') { %>
+            <div class="prediction_start">This event starts on <%= expMonthDayYear %> at <%= expTime %></div>
+        <% } %>
+        <div class="press_question_answers_wrapper">
+          <div class="blogging_question_answered_mask show_hide_answer_info"></div>
+          <ul class="blogging_question_input_answers">
+            <% _.each(choices, function(choice, index){ %>
+                <li>
+                    <div class="blogging_question_edit_answers_item blogging_question_answer">
+                        <input type="radio" name="<%= choice.contestUUID %>" cmtyx-answer-iscorrect="<%= choice.isCorrect ? true : false %>" data-index="<%= index %>" data-id="<%= choice.choiceId %>" class="radioAnswer answer-choice" <% if (currentChoiceByUser === index + 1) { %> checked <% } %> >
+                            <div class="inputRadioImg"></div>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <%= index + 1 %>
+                                </div>
+                                <div data-index="<%= index %>" class="form-control answer-example"  ><%= choice.displayText %></div>
+                            </div>
+                    </div>
+                </li>
+                <% }) %>
+          </ul>
+        </div>
+    </section>
+    <div class="blogging_question_detailed collapse">
+        <div class="blogging_question_answer">
+            <header class="answerHeader">
+                <span class="thanksText"><%= messageLine1 %><br /><%= messageLine2 %></span>
+            </header>
+            <section class="answerBody">
+                <div class="resultsData">
+                    <p class="resultsText">Results:</p>
+                    <% _.each(choices, function(choice) { %>
+                        <div><p><% if (choice.percentOfTotalResponses !== null && choice.percentOfTotalResponses !== "NaN") { %> <%= choice.percentOfTotalResponses.toFixed(0) %><% } %>%</p><p>: <%= choice.choiceId %>: </p> <%= choice.displayText %> <% if (choice.thisIsYourChoice) { %> - <span>YOU</span> <% } %></div>
+                    <% }) %>
+                </div>
+                <div id="answerBar<%= uuid %>" class="answerBar"></div>
+            </section>
+        </div>
+        <div class="blogging_question_answerInfo">
+            <header class="answerInfoHeader">
+                <span class="answerInfoHeaderTitle">
+                    Answer Info
+                </span>
+            </header>
+            <section class="answerInfoBody">
+                <p class="answerInfoText"><%= additionalInformation %></p>
+                <div class="answerInfoText last">
+                    <% if (infoURL1 || infoURL2) { %>Related Links:
+                        <br />
+                    <% } %>
+                    <% if (infoURL1) { %>
+                        <a href="<%= infoURL1 %>" target="_blank"> <%= infoURL1 %> </a>
+                    <% } %>
+                    <% if (infoURL2) { %>
+                        <br />
+                        <a href="<%= infoURL2 %>" target="_blank"> <%= infoURL2 %></a>
+                    <% } %>
+              </div>
+            </section>
+        </div>
+    </div>
+    <footer class="questionFooter">
+        <!-- <div class="show_hide_answer_info"><img src="images/info.png"></div> -->
+        <!-- <span class="label label-success show_hide_answer_info">ANSWERED</span> -->
+        <div class="blogging_question_answers">
+            <div class="blogging_question_answers_icon <%= answerStatus.enumText === "ANSWERED" ? "answered" : "" %>"></div>
+            <div class="blogging_question_answers_count"><%= totalAnswers %></div>
+        </div>
+        <div class="blogging_question_likes_button">
+            <div class="blogging_question_likes_icon <%= likeStatus.enumText === "LIKE" ? "active" : "" %>"></div>
+            <div class="blogging_question_likes_count"><%= likes %></div>
+        </div>
+         <div class="blogging_question_comment_button">
+            <div class="blogging_question_comment_icon">
+                <i class="fa fa-comment-o" aria-hidden="true"></i>
+            </div>
+            <div class="blogging_question_comment_count"><%= messages %></div>
+        </div>
+        <div class="blogging_question_share_button">
+           <img src="images/share.png" alt="">
+        </div>
+        <!-- <% if (answerStatus.enumText==='ANSWERED') { %>
+            <div class="already_answered_text">You've already Answered this Question</div>
+        <% } %> -->
+    </footer>
+    <div class="blogging_question_answer_details"></div>
+    <div class="blogging_question_messages">
+        <div class="root_comment_field">
+            <textarea class="root_textarea" maxlength="500" placeholder="leave comment as <%= user.userName %>"></textarea>
+            <a href="">POST</a>
+            <div class="counter">
+                <div class="message_length">0</div>
+                <div>/500</div>
+            </div>
+        </div>
+        <div class="messages_region"></div>
+        <div class="next_button">
+            <a href="#">next comments</a>
+        </div>
+    </div>
+    <div class="blogging_question_more dropdown">
+        <img src="images/moreinfo.png" data-toggle="dropdown" alt="">
+        <ul class="dropdown-menu dropdown-menu-right">
+            <li class="dropdown-header">id: <%= id %></li>
+            <li class="disabled"><a href="#">Hide Question</a></li>
+            <li class="disabled"><a href="#">Save Question</a></li>
+            <li class="disabled"><a href="#">Report Question</a></li>
+        </ul>
+    </div>
+
+</div>

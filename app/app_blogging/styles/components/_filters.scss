@@ -1,0 +1,38 @@
+.blogging_feed_tabs_items {
+    height: 42px;
+    margin-bottom: 15px;
+
+    li {
+        a {
+            font-style: normal;
+            font-weight:400;
+            font-size: 14px;
+            font-family: 'Open Sans';
+            text-decoration: none;
+            display: inline-block;
+            float: left;
+            color: $text-hover;
+            text-align: center;
+            border: solid 1px $input;
+            width: 30%;
+            line-height: 40px;
+            height: 42px;
+            background-color: $white;
+
+            &:hover {
+                color: $text;
+                border-bottom: solid 3px $main-hover;
+            }
+        }
+
+        a.refresh-feed {
+            width: 10%;
+            padding: 12px;
+        }
+
+        .active {
+            color: $text;
+            border-bottom: solid 3px $main;
+        }
+    }
+}

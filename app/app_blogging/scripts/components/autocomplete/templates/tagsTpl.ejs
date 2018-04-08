@@ -1,0 +1,17 @@
+<div class="blogging_tagsHeader">
+	<span class="panelHeaderTitle">Please choose <% if (type === 'tags') { %>tags<% } else { %>topics<% } %> below</span>
+	<span
+		class="blogging_tags_close"
+		data-toggle="collapse"
+		data-target="#tags-filter-expanded"
+		aria-expanded="false"
+		aria-controls="tags-filter-expanded"><img src="images/arrow_up.png" /></span>
+</div>
+<div id="tags-filter-expanded" class="collapse">
+	<div class="js-input-region"></div>
+	<div class="js-tags-region <%= type %>"></div>
+	<div class="row go-buttons-container">
+		<button type="button" class="btn btn-primary go-button">Go</button>
+		<button type="button" class="btn btn-primary discard-button">Discard</button>
+	</div>
+</div>

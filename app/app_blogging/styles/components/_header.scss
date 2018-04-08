@@ -1,0 +1,92 @@
+#header-region {
+    border-top: 1px solid $input;
+    margin-top: 51px;
+
+    .navbar.navbar-default.header {
+        background-color: $light-grey;
+        margin-bottom: 0;
+        padding-bottom: 2px;
+        border: none;
+
+        .dropdown-menu {
+            margin-top: 6px;
+        }
+
+        .dropdown-menu:before {
+            position: absolute;
+            top: -7px;
+            left: calc(50% - 4px);
+            display: inline-block;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid $active;
+            border-left: 7px solid transparent;
+            content: '';
+        }
+
+        .dropdown-menu:after {
+            position: absolute;
+            top: -6px;
+            left: calc(50% - 3px);
+            display: inline-block;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid $white;
+            border-left: 6px solid transparent;
+            content: '';
+        }
+
+        .navbar-brand {
+            padding: 0;
+            img {
+                height: 50px;
+            }
+        }
+
+        .menuItemText {
+            color: $text-hover;
+        /*  font: 400 14px Ubuntu; */
+            font-style: normal;
+            font-weight:400;
+            font-size: 14px; 
+            font-family: 'Open Sans';
+            margin-right: 20px;
+            position: relative;
+            top: 1px;
+        }
+
+        .menuItemText.last {
+            margin-right: 0px;
+        }
+
+        .headerUserAvatar {
+            position: relative;
+            height: 46px;
+            width: 46px;
+        }
+
+        .signin-button,
+        .signedin {
+            padding-top: 3px;
+            padding-bottom: 2px;
+
+            img {
+                height: 46px;
+            }
+        }
+
+        .dropdown-toggle.last {
+            padding-bottom: 0px;
+            padding-top: 3px;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+            .navbar-brand {
+                padding-left: 0px;;
+            }
+
+            .navbar-toggle {
+                margin-right: 0px;
+            }
+        }
+    }
+}

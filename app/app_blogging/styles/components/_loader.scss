@@ -1,0 +1,32 @@
+.loader.wrapper {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: fixed;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 10000;
+  .loader.message{
+    margin-top: 25%;
+    background-color: $black;
+    border-radius: 10px;
+    color: $white;
+    display: none;
+    height: 110px;
+    opacity: .7;
+    padding-bottom: 40px;
+    text-align: center;
+    .loader-img {
+      background: url('ajax-loader.gif') no-repeat center top;
+      height: 100%;
+      margin-top: 10px;
+    }
+
+    .loader-text {
+      color: $white;
+      font-size: 16px;
+      font-weight: 800;
+    }
+  }
+}

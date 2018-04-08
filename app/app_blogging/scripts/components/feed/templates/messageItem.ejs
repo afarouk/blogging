@@ -1,0 +1,28 @@
+<div class="message_body">
+	<% if (message.authorImageUrl && message.authorImageUrl.length !== 0) { %>
+		<img src="<%= message.authorImageURL %>" alt="" />
+	<% } else { %>
+		<img src="images/question_user.png" alt="">
+	<% } %>
+	<p class="user_name"><%= message.userName %></p>
+	<p class="message_text"><%= message.postbody %></p>
+	<p class="time_ago"><%= timeAgo %></p>
+</div>
+<div class="options_bar">
+	<div class="warning_sign flag_comment"><img src="images/warning-sign.png" /></div>
+	<div class="like_comment"><img src="images/like_comment.png" /></div>
+	<% if (message.enableReply===true) { %>
+		<div class="reply"><img src="images/reply.png"></div>
+	<% } %>
+	<% if (message.isDeletable===true) { %>
+		<div class="trash"><img src="images/trash.png" /></div>
+	<% } %>
+</div>
+<div class="reply_comment_field">
+	<textarea maxlength="500" placeholder="leave comment as <%= user.userName %>"></textarea>
+	<a href="">POST</a>
+	<div class="counter">
+		<div class="message_length">0</div>
+		<div>/500</div>
+	</div>
+</div>

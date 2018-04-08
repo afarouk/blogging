@@ -1,0 +1,32 @@
+.types-container {
+    height: 40px;
+    margin-bottom: 10px;
+
+    div {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        height: 40px;
+        padding: 0;
+        background-color: $main;
+        text-align: center;
+        border-right: 1px solid $white;
+        padding: 10px;
+
+        &:hover {
+            border-bottom: 3px solid $main-hover;
+        }
+
+        a {
+            color: $white;
+
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .active {
+        border-bottom: 3px solid $main-hover;
+    }
+}

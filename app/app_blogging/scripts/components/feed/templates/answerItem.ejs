@@ -1,0 +1,13 @@
+<div class="blogging_question_edit_answers_item">
+    <% if (choice.subType === 2) { %>
+        <input type="radio" name="answer" data-index="<%= choice.index %>" class="radioCreateAnswer answer-choice" <% if (choice.isCorrect) { %>checked
+        <% } %>>
+        <div class="inputRadioImg"></div>
+    <% } %>
+    <div class="input-group">
+        <div class="input-group-addon">
+            <%= choice.index + 1 %>
+        </div>
+        <input type="text" data-index="<%= choice.index %>" class="form-control answer-example"   placeholder="Answer <%= choice.index + 1 %>" value="<%= choice.displayText %>">
+    </div>
+</div>
