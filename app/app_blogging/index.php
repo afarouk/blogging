@@ -56,10 +56,6 @@
  <?php
     include_once ('pages/feed_content.php');
   ?>
-  <!--
-  <?php
-    include_once ('pages/footer.php');
-  ?>
--->
+  
  </body>
 </html>

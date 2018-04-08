@@ -5,7 +5,7 @@
 	box-shadow: none !important;
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
 	text-shadow: none !important;
-	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-family: "Raleway", Arial, Helvetica, sans-serif;
 	font-weight: 400;
 }
 
@@ -14,13 +14,13 @@
 }
 
 form *{
-	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-family: "Raleway", Arial, Helvetica, sans-serif;
 }
 
 input, textarea{
 	background-image: none !important;
 	border: 1px solid #ccc !important;
-	font-family: "Open Sans", Arial, Helvetica, sans-serif !important;
+	font-family: "Raleway", Arial, Helvetica, sans-serif !important;
 }
 
 select{
@@ -29,7 +29,7 @@ select{
 
 .btn{
 	background-image: none !important;
-	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-family: "Raleway", Arial, Helvetica, sans-serif;
 }
 
 .btn.btn-mini{

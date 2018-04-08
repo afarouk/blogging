@@ -3,6 +3,7 @@ html {
     height: 100%;
     width: 100%;
     overflow: hidden;
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
 }
 
 .navbar.navbar-default.header {
@@ -55,7 +56,7 @@ html {
     font-style: normal;
     font-weight:400;
     font-size: 14px;
-    font-family: 'Open Sans';
+    font-family: 'Raleway';
     position: relative;
     top: 1px;
 }
@@ -207,7 +208,7 @@ html {
     font-style: normal;
     font-weight:400;
     font-size:11px;
-    font-family: 'Open Sans';
+    font-family: 'Raleway';
     text-transform: uppercase;
     margin-left: 10px;
 }
