@@ -1,4 +1,4 @@
-<div class="container " style="background-color:#388e3c; color:white; width:100%; margin-left:0px;padding-top:20px;margin-right:0px;"  >
+<div class="container " style="background-color:#002277; color:white; width:100%; margin-left:0px;padding-top:20px;margin-right:0px;"  >
 <footer id="footer">
  <section class="container footer-in">
   <div class="col-md-3">
